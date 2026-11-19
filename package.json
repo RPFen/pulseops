@@ -1,0 +1,23 @@
+{
+  "name": "pulseops",
+  "version": "0.4.2",
+  "private": true,
+  "description": "PulseOps monorepo database schema and TypeScript tooling",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "db:generate": "drizzle-kit generate --schema=./packages/db/schema.ts --dialect=postgresql",
+    "db:push": "drizzle-kit push --schema=./packages/db/schema.ts --dialect=postgresql",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.36.4",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.28.1",
+    "typescript": "^5.6.3"
+  }
+}
